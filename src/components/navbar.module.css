@@ -1,0 +1,30 @@
+.Navbar {
+  height: 50px;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  background: black;
+  padding-right: 5%;
+  padding-left: 5%;
+}
+
+.Navbar h1 {
+  color: white;
+  font-size: calc(0.8rem + 1vw);
+}
+
+.Navbar ul {
+  margin-left: 60%;
+  padding: 0;
+}
+
+.Navbar ul .Link {
+  margin: 1.5vw;
+  text-decoration: none;
+  color: white;
+}
+
+.Navbar ul .Link:hover {
+  border-bottom: 3px solid transparent;
+  border-color: white;
+}
