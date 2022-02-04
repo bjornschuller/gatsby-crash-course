@@ -1,0 +1,22 @@
+.IndexPage {
+ display: flex;
+ padding-top: 5%;
+ background-color: black;
+ margin-right: 5%;
+}
+
+.IndexPage .Intro {
+  width: 42%;
+  margin-left: 5%;
+}
+
+.IndexPage h2 {
+  font-size: calc(1rem + 1.5vw);
+  font-weight: 400;
+  margin-bottom: 20px;
+}
+
+.IndexPage p {
+  font-size: calc(0.75rem + 0.53vw);
+  color: white;
+}

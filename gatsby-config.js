@@ -5,7 +5,5 @@ module.exports = {
     author: `@gatsbyjs`,
     siteUrl: `https://gatsbystarterdefaultsource.gatsbyjs.io/`,
   },
-  plugins: [
-    
-  ],
+  plugins: [`gatsby-plugin-image`, `gatsby-plugin-sharp`],
 }
