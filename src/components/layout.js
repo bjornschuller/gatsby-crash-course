@@ -1,14 +1,27 @@
 import React from "react"
 import Navbar from "./navbar"
-import '../styles/global.css'
+import "../styles/global.css"
+import { useStaticQuery, graphql } from "gatsby"
 
-export default function Layout({children}) {
+export default function Layout({ children }) {
+  const data = useStaticQuery(graphql`
+    {
+      site {
+        siteMetadata {
+          title
+        }
+      }
+    }
+  `)
+
+  const { title } = data.site.siteMetadata
+
   return (
     <div className="Layout">
-      <Navbar />
+      <Navbar title={title} />
       {children}
       <footer>
-        <p>FOO © 2022</p>
+        <p>{title} © 2022</p>
       </footer>
     </div>
   )

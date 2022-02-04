@@ -2,10 +2,10 @@ import React from "react"
 import { Link } from "gatsby"
 import * as classes from "./navbar.module.css"
 
-export default function Navbar() {
+export default function Navbar({title}) {
   return (
     <nav className={classes.Navbar}>
-      <h1>FOO</h1>
+      <h1>{title}</h1>
       <ul>
         <Link className={classes.Link} to="/">
           Home
