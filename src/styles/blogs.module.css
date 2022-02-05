@@ -1,0 +1,40 @@
+.BlogsPage {
+  background-color: #fafafa;
+  padding-left: 5%;
+  padding-right: 5%;
+  padding-bottom: 5%;
+  min-height: 80vh;
+}
+
+.BlogsPage .BlogPosts {
+ display: flex;
+ justify-content: center;
+ flex-wrap: wrap;
+}
+
+.BlogsPage h1 {
+  color: #8e4a6a;
+}
+
+.BlogPost {
+  display: flex;
+  flex-direction: column;
+  flex: 0 0 31.333333%;
+  align-items: center;
+  text-align: center;
+  background-color: #fefefe;
+  margin-top: 2%;
+  margin-right: 2%;
+  margin-bottom: 2%;
+  width: 30vw;
+  min-height: 400px;
+  max-height: 400px; 
+  border-radius: 9px;
+  position: relative;
+  cursor: pointer;
+}
+
+.BlogPost h3,
+p {
+  color: black;
+}
