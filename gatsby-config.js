@@ -5,5 +5,13 @@ module.exports = {
     author: `@gatsbyjs`,
     siteUrl: `https://gatsbystarterdefaultsource.gatsbyjs.io/`,
   },
-  plugins: [`gatsby-plugin-image`, `gatsby-plugin-sharp`],
+  plugins: [`gatsby-plugin-image`, `gatsby-plugin-sharp`, 
+    {
+      resolve: "gatsby-source-filesystem", 
+      options: {
+        name: "blogs",
+        path: `${__dirname}/content/blogs`
+      }
+    }
+],
 }
