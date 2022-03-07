@@ -1,6 +1,6 @@
 import React from 'react';
 import Layout from '../../components/layout';
-import { graphql } from "gatsby"
+import { graphql, Link } from "gatsby"
 import * as classes from "../../styles/blogs.module.css"
 import { GatsbyImage, getImage } from "gatsby-plugin-image"
 
@@ -12,14 +12,16 @@ export default function BlogsPage({data}) {
       <h1>Blogs.</h1>
       <div className={classes.BlogPosts}>
         {data.allMarkdownRemark.nodes.map(node => {
-            const thumb = getImage(node.frontmatter.thumb)
-            console.log("TESTT GOT ", thumb)
+          const thumb = getImage(node.frontmatter.thumb)
+          const blogFileName = node.parent.name
           return (
             <div className={classes.BlogPost} key={node.id}>
-              <GatsbyImage image={thumb} alt="thumbnail"></GatsbyImage>
-              <h3>{node.frontmatter.title}</h3>
-              <p>{node.frontmatter.description}</p>
-              <p>{node.frontmatter.date}</p>
+              <Link to={"/blogs/" + blogFileName}>
+                <GatsbyImage image={thumb} alt="thumbnail"></GatsbyImage>
+                <h3>{node.frontmatter.title}</h3>
+                <p>{node.frontmatter.description}</p>
+                <p>{node.frontmatter.date}</p>
+              </Link>
             </div>
           )
         })}
@@ -44,6 +46,11 @@ export const query = graphql`
           }
         }
         id
+        parent {
+          ... on File {
+            name
+          }
+        }
       }
     }
   }
